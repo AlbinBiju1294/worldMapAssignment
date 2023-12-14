@@ -48,7 +48,7 @@ let answers = new Map([
 //variable declarations
 let randomNumberArray = [];
 let randomNo;
-let index =1;
+let index = 1;
 let count =  localStorage.getItem('noofQuestions');
 let mark = 0;
 
@@ -71,6 +71,21 @@ function setName(name)
 function setNoOfQuestions(noOfQuestions)
 {
     localStorage.setItem('noofQuestions', noOfQuestions);
+}
+
+function generateRandomNumber()
+{
+    flag = true;
+    let newRandomNo;
+    do{
+        newRandomNo = Math.floor(Math.random() * 10) + 1;
+        if(randomNumberArray.indexOf(newRandomNo)<0)
+        {
+            randomNumberArray.push(newRandomNo);
+            flag = false;
+        }
+    }while(flag)
+    return newRandomNo;
 }
 
 
@@ -99,24 +114,11 @@ function generateRandomQuestion(){
     }
     else
     {
-        alert(`${localStorage.getItem('name')}, you have scored ${(mark/count)*100}`);
+        alert(`${localStorage.getItem('user')}, you have scored ${(mark/count)*100}`);
     }
 }
 
-//function for generating random number
-function generateRandomNumber()
-{
-    flag = true;
-    let newRandomNo;
-    do{
-        newRandomNo = Math.floor(Math.random() * 10) + 1;
-        if(randomNumberArray.indexOf(newRandomNo)<0)
-        {
-            flag = false;
-        }
-    }while(flag)
-    return newRandomNo;
-}
+
 
 function generateResult()
 {
@@ -142,14 +144,10 @@ function checkAnswer(answer){
         displaystatus.innerHTML="Correct";
     }
     else{
-        //if answer is wrong write code here
         let displaystatus=document.getElementById('answer1');
         displaystatus.style.color="red";
         displaystatus.innerHTML="Wrong";
     }
-    // if(countChecker===count){
- 
-    // }
  
     let nextButton=document.getElementById("nextButton");
     nextButton.removeAttribute("disabled");
