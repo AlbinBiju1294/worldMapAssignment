@@ -1,14 +1,16 @@
 body {
-    background-color: #f4f4f4;
+    background-color: whitesmoke;
   }
   
   .card {
     box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
     border: none;
     margin-top: 20px;
+    min-height: 450px;
   }
   
   .card-title {
+    margin-top: 40px;
     color:blueviolet !important;
     font-size: 1.75rem;
   }
