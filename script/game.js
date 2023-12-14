@@ -54,12 +54,11 @@ function setName(name)
     //Write code to set name to local storage
 }
 
+
+//This functin adds number of questions to local storage
 function setNoOfQuestions(noOfQuestions)
 {
-    
-
     localStorage.setItem('noofQuestions', noOfQuestions);
-    
 }
 
 
