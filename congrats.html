@@ -1,0 +1,40 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/congrats.css">
+</head>
+<body>
+    <audio id="myAudio">
+        
+        <source src="assets/foxoutmp3snd.mp3">
+        
+    </audio>
+    
+    <img src="assets/164598106-confetti-party-popper-explosio (1).gif" id="giffy">
+
+    <div id="congratscontainer">
+        <p id="finalWinScore"></p>
+        <h1 id="congo">CONGRATULATIONS</h1>
+        <img src="assets/MicrosoftTeams-image (1).png" id="bunny"> 
+        <img src="assets/MicrosoftTeams-image (1).png" id="bunnyr">
+        <button type="button" onclick="aplay()" id="click">Click Here</button>
+    </div>
+   <script>
+    function aplay()
+    {
+        var audio = document.getElementById('myAudio');
+        audio.play()
+    }
+   </script>
+   
+    
+   
+</body>
+</html>
