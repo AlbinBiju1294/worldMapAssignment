@@ -47,18 +47,16 @@ let answers = new Map([
 
 //variable declarations
 
+//Function to store the name from input field to the local storage
 
-
-function setName(name)
+function setName(name) 
 {
-    //const name = document.getElementById("firstName").value;
+    
     if (name.trim() === "") {
         alert("Please enter a name.");
         return;
     }
-    // const user = {
-    //     name: name
-    // };
+
     localStorage.setItem("user", name);
 
 }
