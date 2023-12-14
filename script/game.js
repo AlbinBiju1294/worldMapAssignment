@@ -56,10 +56,10 @@ function setName(name)
 
 function setNoOfQuestions(noOfQuestions)
 {
-    //Write code to set no of questions to local storage
+    
 
     localStorage.setItem('noofQuestions', noOfQuestions);
-    console.log(noOfQuestions)
+    
 }
 
 
@@ -94,3 +94,4 @@ function checkAnswer(answer){
         //if answer is wrong write code here
     }
 }
+
