@@ -51,7 +51,16 @@ let answers = new Map([
 
 function setName(name)
 {
-    //Write code to set name to local storage
+    //const name = document.getElementById("firstName").value;
+    if (name.trim() === "") {
+        alert("Please enter a name.");
+        return;
+    }
+    // const user = {
+    //     name: name
+    // };
+    localStorage.setItem("user", name);
+
 }
 
 function setNoOfQuestions(noOfQuestions)
