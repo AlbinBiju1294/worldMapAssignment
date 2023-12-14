@@ -104,14 +104,35 @@ function generateRandomNumber()
     }while(flag)
     return newRandomNo;
 }
+var score=0;
+var countChecker=0
 
 //checking answer on click on map
-function checkAnswer(answer){
+function checkAnswer(answer)
+    {
+    document.getElementById("image-mapid").setAttribute("disabled");
+    countChecker++;
     if(answer === answers.get(randomNo)){
-        //if answer is right write code here
+        score++;
+        let displayStatus=document.getElementById('answer1');
+        displayStatus.style.color="green";
+        displayStatus.innerHTML="Correct";
     }
     else{
         //if answer is wrong write code here
+        let displayStatus=document.getElementById('answer1');
+        displayStatus.style.color="red";
+        displayStatus.innerHTML="Wrong";
     }
+    if(countChecker===count){
+        let percentage=(score/count)*100;
+        if(percentage>=50)
+            document.getElementById("finalWinScore").innerHTML='Score '+percentage;
+        else
+            document.getElementById("finalLooseScore").innerHTML='Score '+percentage;
+    
+    }
+ 
+    document.getElementById("nextButton").removeAttribute("disabled");
+ 
 }
-
