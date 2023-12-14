@@ -46,6 +46,7 @@ let answers = new Map([
 
 
 //variable declarations
+let randomNumberArray = [];
 
 //Function to store the name from input field to the local storage
 
@@ -75,7 +76,11 @@ function generateRandomQuestion(){
     if(index<=count)
     {
         
-        //write code here
+        document.getElementById('nextButton').setAttribute('disabled','true');
+        randomNo = generateRandomNumber();
+        document.getElementById('question').innerText = questions.get(randomNo);
+        document.getElementById('answer1').innerHTML = "";
+        index++;
         
     }
     else
@@ -88,7 +93,16 @@ function generateRandomQuestion(){
 //function for generating random number
 function generateRandomNumber()
 {
-
+    flag = true;
+    let newRandomNo;
+    do{
+        newRandomNo = Math.floor(Math.random * 10) + 1;
+        if(randomNumberArray.indexOf(newRandomNo)<0)
+        {
+            flag = false;
+        }
+    }while(flag)
+    return newRandomNo;
 }
 
 //checking answer on click on map
