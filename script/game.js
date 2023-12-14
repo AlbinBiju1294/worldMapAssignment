@@ -65,13 +65,15 @@ function generateRandomQuestion(){
     //generate questions only upto the required count
     if(index<=count)
     {
-        
-        //write code here
+    
         
     }
     else
     {
         //after finishing the questions
+
+
+
     }
         
 } 
