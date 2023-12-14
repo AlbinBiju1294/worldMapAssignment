@@ -83,10 +83,7 @@ function generateRandomQuestion(){
         index++;
         
     }
-    else
-    {
-        //after finishing the questions
-    }
+    
         
 } 
 
