@@ -47,6 +47,10 @@ let answers = new Map([
 
 //variable declarations
 let randomNumberArray = [];
+let randomNo;
+let index =1;
+let count =  localStorage.getItem('noofQuestions');
+let mark = 0;
 
 //Function to store the name from input field to the local storage
 
@@ -72,12 +76,22 @@ function setNoOfQuestions(noOfQuestions)
 
 //generating random questions
 function generateRandomQuestion(){
-    //generate questions only upto the required count
     if(index<=count)
     {
-        
+        console.log(index);
+        if(index == count)
+        {
+            console.log(count);
+            document.getElementById('nextButton').style.backgroundColor = "red";
+            document.getElementById('nextButton').innerText = "Finish";
+            document.getElementById('nextButton').addEventListener('click',generateResult);
+        }
         document.getElementById('nextButton').setAttribute('disabled','true');
         randomNo = generateRandomNumber();
+        if(index == count)
+        {
+            localStorage.setItem('randomnumberarray',randomNumberArray);
+        }
         document.getElementById('question').innerText = questions.get(randomNo);
         document.getElementById('answer1').innerHTML = "";
         index++;
@@ -85,10 +99,9 @@ function generateRandomQuestion(){
     }
     else
     {
-        //after finishing the questions
+        alert(`${localStorage.getItem('name')}, you have scored ${(mark/count)*100}`);
     }
-        
-} 
+}
 
 //function for generating random number
 function generateRandomNumber()
@@ -96,7 +109,7 @@ function generateRandomNumber()
     flag = true;
     let newRandomNo;
     do{
-        newRandomNo = Math.floor(Math.random * 10) + 1;
+        newRandomNo = Math.floor(Math.random() * 10) + 1;
         if(randomNumberArray.indexOf(newRandomNo)<0)
         {
             flag = false;
@@ -105,13 +118,40 @@ function generateRandomNumber()
     return newRandomNo;
 }
 
+function generateResult()
+{
+    if(((mark/count)*100)<50)
+    {
+        location.replace("sad.html");
+    }
+    else
+    {
+        location.replace("congrats.html");
+    }
+
+    
+}
+
 //checking answer on click on map
 function checkAnswer(answer){
     if(answer === answers.get(randomNo)){
-        //if answer is right write code here
+        mark++;
+        console.log(mark);
+        let displaystatus=document.getElementById('answer1');
+        displaystatus.style.color="green";
+        displaystatus.innerHTML="Correct";
     }
     else{
         //if answer is wrong write code here
+        let displaystatus=document.getElementById('answer1');
+        displaystatus.style.color="red";
+        displaystatus.innerHTML="Wrong";
     }
+    // if(countChecker===count){
+ 
+    // }
+ 
+    let nextButton=document.getElementById("nextButton");
+    nextButton.removeAttribute("disabled");
 }
 
