@@ -48,16 +48,25 @@ let answers = new Map([
 //variable declarations
 let randomNumberArray = [];
 
+//Function to store the name from input field to the local storage
 
-
-function setName(name)
+function setName(name) 
 {
-    //Write code to set name to local storage
+    
+    if (name.trim() === "") {
+        alert("Please enter a name.");
+        return;
+    }
+
+    localStorage.setItem("user", name);
+
 }
 
+
+//This function adds number of questions to local storage
 function setNoOfQuestions(noOfQuestions)
 {
-    //Write code to set no of questions to local storage
+    localStorage.setItem('noofQuestions', noOfQuestions);
 }
 
 
@@ -105,3 +114,4 @@ function checkAnswer(answer){
         //if answer is wrong write code here
     }
 }
+
