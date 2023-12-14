@@ -63,9 +63,11 @@ function setName(name)
 
 }
 
+
+//This function adds number of questions to local storage
 function setNoOfQuestions(noOfQuestions)
 {
-    //Write code to set no of questions to local storage
+    localStorage.setItem('noofQuestions', noOfQuestions);
 }
 
 
@@ -100,3 +102,4 @@ function checkAnswer(answer){
         //if answer is wrong write code here
     }
 }
+
