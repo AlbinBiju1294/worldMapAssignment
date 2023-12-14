@@ -46,17 +46,27 @@ let answers = new Map([
 
 
 //variable declarations
+let randomNumberArray = [];
 
+//Function to store the name from input field to the local storage
 
-
-function setName(name)
+function setName(name) 
 {
-    //Write code to set name to local storage
+    
+    if (name.trim() === "") {
+        alert("Please enter a name.");
+        return;
+    }
+
+    localStorage.setItem("user", name);
+
 }
 
+
+//This function adds number of questions to local storage
 function setNoOfQuestions(noOfQuestions)
 {
-    //Write code to set no of questions to local storage
+    localStorage.setItem('noofQuestions', noOfQuestions);
 }
 
 
@@ -65,23 +75,31 @@ function generateRandomQuestion(){
     //generate questions only upto the required count
     if(index<=count)
     {
-    
+        
+        document.getElementById('nextButton').setAttribute('disabled','true');
+        randomNo = generateRandomNumber();
+        document.getElementById('question').innerText = questions.get(randomNo);
+        document.getElementById('answer1').innerHTML = "";
+        index++;
         
     }
-    else
-    {
-        //after finishing the questions
-
-
-
-    }
+    
         
 } 
 
 //function for generating random number
 function generateRandomNumber()
 {
-
+    flag = true;
+    let newRandomNo;
+    do{
+        newRandomNo = Math.floor(Math.random * 10) + 1;
+        if(randomNumberArray.indexOf(newRandomNo)<0)
+        {
+            flag = false;
+        }
+    }while(flag)
+    return newRandomNo;
 }
 
 //checking answer on click on map
@@ -93,3 +111,4 @@ function checkAnswer(answer){
         //if answer is wrong write code here
     }
 }
+

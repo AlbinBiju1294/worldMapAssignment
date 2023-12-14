@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Marck+Script&family=Seaweed+Script&display=swap');
+
+/* body{
+    background: url('../assets/164598106-confetti-party-popper-explosio\ \(1\).gif') no-repeat;
+    width:2500px;
+} */
+#sadcontainer{
+    height:150px;
+    width: 750px;
+    position: absolute;
+    left:300px;
+    top:250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+ 
+   
+}
+#rainy{
+    height: 650px;
+    width:1288px;
+}
+#sad1{
+    position: absolute;
+    top:20px;
+    left:150px;
+ 
+font-family: 'Seaweed Script', cursive;
+font-size: 50px;
+}
+#bunnyl
+{
+    width:150px;
+    height: 150px;
+    position: absolute;
+    bottom:0px;
+}
+#bunnyr
+{
+    width:150px;
+    height: 150px;
+    position: absolute;
+    right: 10px;
+    transform: scaleX(-1);
+    bottom:0px;
+}
