@@ -25,7 +25,7 @@ let answers = new Map([
 
     [1, "Asia"],
 
-    [2, "Africa"],
+    [2, "Asia"],
 
     [3, "Australia"],
 
@@ -46,6 +46,7 @@ let answers = new Map([
 
 
 //variable declarations
+
 let randomNumberArray = [];
 let randomNo;
 let index = 1;
@@ -61,17 +62,25 @@ function setName(name)
         alert("Please enter a name.");
         return;
     }
-
-    localStorage.setItem("user", name);
-
+    else
+    {
+        const firstLetter = name.charAt(0);
+        const firstLetterCap = firstLetter.toUpperCase();
+        const remainingLetters = name.slice(1)
+        const newName = firstLetterCap + remainingLetters;
+        localStorage.setItem("user", newName);
+    }
 }
 
 
 //This function adds number of questions to local storage
+
 function setNoOfQuestions(noOfQuestions)
 {
     localStorage.setItem('noofQuestions', noOfQuestions);
 }
+
+//function to generate random number without duplicates
 
 function generateRandomNumber()
 {
@@ -88,8 +97,8 @@ function generateRandomNumber()
     return newRandomNo;
 }
 
+//function for generating random questions and displaying it
 
-//generating random questions
 function generateRandomQuestion(){
     if(index<=count)
     {
@@ -101,6 +110,7 @@ function generateRandomQuestion(){
             document.getElementById('nextButton').innerText = "Finish";
             document.getElementById('nextButton').addEventListener('click',generateResult);
         }
+        document.getElementById('correctanswer').innerHTML = "";
         document.getElementById('nextButton').setAttribute('disabled','true');
         randomNo = generateRandomNumber();
         if(index == count)
@@ -118,7 +128,7 @@ function generateRandomQuestion(){
     }
 }
 
-
+//function for redirecting to animation page 
 
 function generateResult()
 {
@@ -130,11 +140,10 @@ function generateResult()
     {
         location.replace("congrats.html");
     }
-
-    
 }
 
-//checking answer on click on map
+//function for checking whether answer is correct on map click
+
 function checkAnswer(answer){
     if(answer === answers.get(randomNo)){
         mark++;
@@ -143,11 +152,13 @@ function checkAnswer(answer){
         displaystatus.style.color="green";
         displaystatus.innerHTML="Correct";
     }
+    
     else{
         let displaystatus=document.getElementById('answer1');
         displaystatus.style.color="red";
         displaystatus.innerHTML="Wrong";
     }
+    document.getElementById('correctanswer').innerHTML = `Correct answer : ${answers.get(randomNo)}`;
  
     let nextButton=document.getElementById("nextButton");
     nextButton.removeAttribute("disabled");
