@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/test.css">
+    <script src="../script/game.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Welcome To World Map Game</h2>
+            <form>
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" required onchange="setName(this.value)">
+
+                <label for="number" class="form-label">Questions:</label>
+                                <select id="number" onchange="setNoOfQuestions(this.value)">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+
+                <a href="gam.html" class="gs">Get Started</a>
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="../assets/map.gif" alt="Login Image">
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+body{
+    background-image: url('../assets/bg.gif');
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 100px;
+    letter-spacing: 10px;
+    font-family: fantasy;
+    color: rgba(255, 255, 255, 0.768);
+}
+a{
+  padding-left: 550px;
+  
+}
+
+button{
+    background-color: rgba(148, 141, 12, 0.808);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: aliceblue;
+    font-family:fantasy;
+    letter-spacing: 5px;
+}
