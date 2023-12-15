@@ -1,5 +1,6 @@
 body {
     background-color: whitesmoke;
+    background-image: url('../assets/worldmap\ \(2\).jpg');
   }
   
   .card {
@@ -44,3 +45,6 @@ body {
     max-width: 100%;
   }
   
+ #description{
+    color: #1d80ff;
+  }
