@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz with Feedback Form</title>
+    <link rel="stylesheet" href="../css/feedback.css" />
+   
+
+  </head>
+  <body>
+    <!-- <img src="../assets/feedbackimg.jpeg" class="bgimg1"> -->
+  
+    <!-- <img class="feedbackground-image" src="../assets/feedbackimg.jpeg" alt="Background Image"> -->
+
+    <div class="quiz-container">
+      <div id="feedback-form" class="hidden">
+        <h2>Feedback Form</h2>
+        <form id="quizFeedbackForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="comments">Comments:</label>
+          <textarea id="comments" name="comments" rows="4" required></textarea>
+
+          <a href="./welcome.html"><button type="button" onclick="submitFeedback()" id="subbutton">
+           Submit Feedback
+          </button>
+
+          
+        </form>
+      </div>
+    </div>
+
+    
+  </body>
+</html>

@@ -73,3 +73,17 @@ font-size: 50px;
     margin-left: 350px;
     margin-top: 100px;
 }
+
+.feedbackbutton
+{
+    position: absolute;
+    top: 70%;
+    left: 100px;
+    background-color: #3B71CA;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 350px;
+    margin-top: 100px;
+}
