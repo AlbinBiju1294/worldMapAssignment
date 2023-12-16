@@ -41,6 +41,4 @@ generateResult() - For redirecting to corresponding pages after attending
 
 checkAnswer() - For checking answers against the user clicked ones and displaying whether right or wrong
 
-# Screenshots
-
 
