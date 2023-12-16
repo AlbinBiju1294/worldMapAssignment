@@ -159,29 +159,39 @@ function generateResult()
     }
 }
 
-//function for checking whether answer is correct on map click
+//function for checking whether answer is correct on map click.
+// Make the next button enable and map disabled.
+
 let keyw;
-function checkAnswer(answer){
+function checkAnswer(answer)
+{
     document.getElementById('map-image').style.pointerEvents = 'none';
-    if(answer === answers.get(randomNo)){
+    if(answer === answers.get(randomNo))
+    {
         mark++;
         console.log(mark);
         let displaystatus=document.getElementById('answer1');
         displaystatus.style.color="green";
         displaystatus.innerHTML="Correct";
         keyw=1;
+
     }
     
-    else{
+    else
+    {
+
         let displaystatus=document.getElementById('answer1');
         displaystatus.style.color="red";
         displaystatus.innerHTML="Wrong";
         keyw=0;
+    
     }
     document.getElementById('correctanswer').innerHTML = `Correct answer : ${answers.get(randomNo)}`;
  
     let nextButton=document.getElementById("nextButton");
+
     nextButton.removeAttribute("disabled");
+
     addDescription(keyw);
 }
 
