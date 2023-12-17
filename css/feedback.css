@@ -3,67 +3,64 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: url('../assets/bg.gif');
     background-size: cover;
-    background-image: url(../assets/feedbackimg.jpeg);
+    /* background-color: rgb(250, 8, 8); For browsers that do not support gradients
+    background-image: linear-gradient(to right, rgb(45, 6, 50) , rgba(113, 38, 12, 0.967)); */
 } 
-.bgimg1{
-    height: 1000px;
-    width:100vw;
-}
-
-.quiz-container {
-    max-width: 600px;
-    margin: auto;
-   
-    position: absolute;
-    top:400px;
-    background-color:white;
-  
-   
-}
-
-#feedback-form {
-    position: absolute;
-    width:1000px;
-    height: 200px;
-    left:180px;
-    background-color: rgb(103, 180, 240);
-    
-}
-
-/* .hidden {
-    display: none;
-} */
-.feedbackbutton
-{
-    position: absolute;
-    top: 70%;
-    left: -90px;
-    background-color: #3B71CA;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 10px;
-    margin-left: 350px;
+.quiz-container{
+    background-color: rgba(243, 244, 245, 0.552);
+    width: 360px;
+    height: 400px;
+    margin-left: 450px;
     margin-top: 100px;
+    border-radius: 10px;
+}
+#quizFeedbackForm{
+    padding-left: 50px;
 }
 
-  .feedbackground-image
-  {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+input{
+    margin-top: 20px;
+    width: 260px;
+    background:transparent;
+    border: none;
+    color: aliceblue;
+    border-bottom: solid rgb(84, 81, 81);
+   
+}
+textarea{
+    margin-top: 30px;
+    background:transparent;
+    border: none;
+    width: 260px;
+    border-bottom: solid rgb(84, 81, 81);
+    height: 30px;
+    resize: none;
+}
+h2{
+    text-align: center;
+    padding-top: 20px;
+    color: aliceblue;
+}
+
+#commentsid{
+    padding-right: 18px;
 
 }
-#comments{
-    width:400px;
-    position: absolute;
-    top:65px;
+button{
+    margin-top: 70px;
+    margin-left: 75px;
+    background-color: rgb(16, 134, 12);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+   
 }
-#subbutton{
-    position: absolute;
-    top:140px;
-}
+
+::placeholder {
+    color: rgb(84, 81, 81);
+    opacity: 1; 
+  }
+
+
